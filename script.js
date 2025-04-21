@@ -1,4 +1,3 @@
-// script.js
 let bitArray = [];
 
 function addBit(bit) {

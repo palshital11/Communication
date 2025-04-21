@@ -1,40 +1,71 @@
-// Function to handle ARQ/FEC selection and show the respective options
-document.getElementById("arqFec").addEventListener("change", toggleOptions);
-
-// Function to show the correct options based on user selection
-function toggleOptions() {
-  const selectedOption = document.getElementById("arqFec").value;
-  const arqOptions = document.getElementById("arqOptions");
-  const fecOptions = document.getElementById("fecOptions");
-
-  // Show or hide ARQ/FEC options based on selection
-  if (selectedOption === "arq") {
-    arqOptions.style.display = "block";
-    fecOptions.style.display = "none";
-  } else if (selectedOption === "fec") {
-    arqOptions.style.display = "none";
-    fecOptions.style.display = "block";
-  } else {
-    arqOptions.style.display = "none";
-    fecOptions.style.display = "none";
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-// Function to submit data (for now just an alert)
-function submitData() {
-  const carrierFreq = document.getElementById("carrierFreq").value;
-  const bitSequence = document.getElementById("bitSequence").value;
-  
-  if (!carrierFreq || !bitSequence) {
-    alert("Please enter all required fields.");
-    return;
-  }
-  
-  // Proceed to next page or logic
-  alert(`Carrier Frequency: ${carrierFreq}\nBit Sequence: ${bitSequence}`);
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
-// Function to simulate navigation (for now it just alerts)
-function goToPage(page) {
-  alert(`Going to page for: ${page}`);
+h1 {
+  text-align: center;
+}
+
+.input-section {
+  margin-bottom: 15px;
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-section input,
+.input-section select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.options-list {
+  margin-top: 10px;
+}
+
+.options-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.options-list li {
+  margin: 5px 0;
+}
+
+.actions {
+  text-align: center;
 }

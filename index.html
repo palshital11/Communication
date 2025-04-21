@@ -2,29 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Data Transmission Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Communication Simulation</h1>
-    <div class="buttons">
-      <button onclick="addBit(0)">Add 0</button>
-      <button onclick="addBit(1)">Add 1</button>
+    <h1>Communication System Simulation</h1>
+    
+    <!-- Carrier Frequency Input -->
+    <div class="input-section">
+      <label for="carrierFreq">Carrier Frequency:</label>
+      <input type="number" id="carrierFreq" placeholder="Enter carrier frequency (Hz)" />
     </div>
-    <div class="bit-sequence">
-      <strong>Sequence:</strong> <span id="bitSequence"></span>
+
+    <!-- Bit Stream Sequence -->
+    <div class="input-section">
+      <label for="bitSequence">Select Bit Stream Sequence:</label>
+      <input type="text" id="bitSequence" placeholder="Enter bit sequence (e.g., 101010)" />
     </div>
-    <div class="options">
-      <label><input type="checkbox" id="checksumToggle" /> Add Checksum</label>
+
+    <!-- ARQ or FEC Selection -->
+    <div class="input-section">
+      <label for="arqFec">Select ARQ or FEC:</label>
+      <select id="arqFec">
+        <option value="arq">ARQ</option>
+        <option value="fec">FEC</option>
+      </select>
     </div>
+
+    <!-- ARQ List -->
+    <div id="arqOptions" class="options-list" style="display: none;">
+      <h3>ARQ Algorithms:</h3>
+      <ul>
+        <li><button onclick="goToPage('parity-check')">Parity Check</button></li>
+        <li><button onclick="goToPage('2d-parity')">2D Parity Check</button></li>
+        <li><button onclick="goToPage('checksum')">Checksum</button></li>
+        <li><button onclick="goToPage('crc')">Cyclic Redundancy Check</button></li>
+        <li><button onclick="goToPage('lrc')">Longitudinal Redundancy Check</button></li>
+      </ul>
+    </div>
+
+    <!-- FEC List -->
+    <div id="fecOptions" class="options-list" style="display: none;">
+      <h3>FEC Algorithms:</h3>
+      <ul>
+        <li><button onclick="goToPage('hamming')">Hamming Code</button></li>
+        <li><button onclick="goToPage('reed-solomon')">Reed-Solomon Code</button></li>
+        <li><button onclick="goToPage('bch')">BCH Code</button></li>
+      </ul>
+    </div>
+
     <div class="actions">
-      <button onclick="sendData()">Send</button>
-      <button onclick="resetData()">Reset</button>
+      <button onclick="submitData()">Submit</button>
     </div>
-    <div id="ledStrip" class="led-strip"></div>
   </div>
-  <script src="script.js"></script>
+
+  <script src="landing.js"></script>
 </body>
 </html>

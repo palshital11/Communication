@@ -1,71 +1,95 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset default browser styling */
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
 }
 
 .container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
-.input-section {
-  margin-bottom: 15px;
-}
-
-.input-section label {
+label {
+  font-weight: 600;
   display: block;
-  margin-bottom: 5px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.input-section input,
-.input-section select {
+select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.6rem;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border 0.3s;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+ul.visible {
+  display: block;
+}
+
+ul li {
+  background-color: #f4f4f4;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-button:hover {
-  background-color: #0056b3;
+ul li:hover {
+  background-color: #dcdde1;
 }
 
-.options-list {
-  margin-top: 10px;
-}
-
-.options-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.options-list li {
-  margin: 5px 0;
-}
-
-.actions {
+footer {
   text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

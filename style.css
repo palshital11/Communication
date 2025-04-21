@@ -93,3 +93,9 @@ footer {
     transform: translateY(0);
   }
 }
+
+ul li.selected {
+  background-color: #3498db;
+  color: #fff;
+}
+

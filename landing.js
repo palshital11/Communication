@@ -38,13 +38,3 @@ function submitData() {
 function goToPage(page) {
   alert(`Going to page for: ${page}`);
 }
-
-algorithmSelect.addEventListener("change", () => {
-  const algo = algorithmSelect.value;
-
-  if (algo === "parity") {
-    window.location.href = "parity.html";
-  }
-
-  // You can later add other navigations for other algorithms
-});

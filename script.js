@@ -5,12 +5,16 @@ function toggleOptions() {
   const arqOptions = document.getElementById("arqOptions");
   const fecOptions = document.getElementById("fecOptions");
 
+  // Show or hide ARQ/FEC options based on selection
   if (selectedOption === "arq") {
     arqOptions.style.display = "block";
     fecOptions.style.display = "none";
-  } else {
+  } else if (selectedOption === "fec") {
     arqOptions.style.display = "none";
     fecOptions.style.display = "block";
+  } else {
+    arqOptions.style.display = "none";
+    fecOptions.style.display = "none";
   }
 }
 

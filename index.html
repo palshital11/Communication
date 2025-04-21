@@ -2,32 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Communication Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Transmission Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Data Communication Simulator</h1>
-
-  <div class="input-section">
-    <h3>Enter Bits</h3>
-    <div class="button-grid">
-      <button onclick="addBit(0)">0</button>
-      <button onclick="addBit(1)">1</button>
+  <div class="container">
+    <h1>Communication Simulation</h1>
+    <div class="buttons">
+      <button onclick="addBit(0)">Add 0</button>
+      <button onclick="addBit(1)">Add 1</button>
     </div>
-    <div class="bit-sequence" id="bitSequence"></div>
-    <label>
-      <input type="checkbox" id="checksumToggle" /> Add Checksum (XOR)
-    </label>
-    <button onclick="sendData()">Send</button>
-    <button onclick="resetData()">Reset</button>
+    <div class="bit-sequence">
+      <strong>Sequence:</strong> <span id="bitSequence"></span>
+    </div>
+    <div class="options">
+      <label><input type="checkbox" id="checksumToggle" /> Add Checksum</label>
+    </div>
+    <div class="actions">
+      <button onclick="sendData()">Send</button>
+      <button onclick="resetData()">Reset</button>
+    </div>
+    <div id="ledStrip" class="led-strip"></div>
   </div>
-
-  <div class="output-section">
-    <h3>Receiver Output</h3>
-    <div class="led-strip" id="ledStrip"></div>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
+// Function to handle ARQ/FEC selection and show the respective options
 document.getElementById("arqFec").addEventListener("change", toggleOptions);
 
+// Function to show the correct options based on user selection
 function toggleOptions() {
   const selectedOption = document.getElementById("arqFec").value;
   const arqOptions = document.getElementById("arqOptions");
@@ -18,6 +20,7 @@ function toggleOptions() {
   }
 }
 
+// Function to submit data (for now just an alert)
 function submitData() {
   const carrierFreq = document.getElementById("carrierFreq").value;
   const bitSequence = document.getElementById("bitSequence").value;
@@ -31,7 +34,7 @@ function submitData() {
   alert(`Carrier Frequency: ${carrierFreq}\nBit Sequence: ${bitSequence}`);
 }
 
+// Function to simulate navigation (for now it just alerts)
 function goToPage(page) {
-  // In this example, it's simply an alert, but you can redirect to corresponding page.
   alert(`Going to page for: ${page}`);
 }

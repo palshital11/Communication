@@ -1,37 +1,70 @@
-document.getElementById("arqFec").addEventListener("change", toggleOptions);
-
-function toggleOptions() {
-  const selectedOption = document.getElementById("arqFec").value;
-  const arqOptions = document.getElementById("arqOptions");
-  const fecOptions = document.getElementById("fecOptions");
-
-  // Show or hide ARQ/FEC options based on selection
-  if (selectedOption === "arq") {
-    arqOptions.style.display = "block";
-    fecOptions.style.display = "none";
-  } else if (selectedOption === "fec") {
-    arqOptions.style.display = "none";
-    fecOptions.style.display = "block";
-  } else {
-    arqOptions.style.display = "none";
-    fecOptions.style.display = "none";
-  }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 
-function submitData() {
-  const carrierFreq = document.getElementById("carrierFreq").value;
-  const bitSequence = document.getElementById("bitSequence").value;
-  
-  if (!carrierFreq || !bitSequence) {
-    alert("Please enter all required fields.");
-    return;
-  }
-  
-  // Proceed to next page or logic
-  alert(`Carrier Frequency: ${carrierFreq}\nBit Sequence: ${bitSequence}`);
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
 }
 
-function goToPage(page) {
-  // In this example, it's simply an alert, but you can redirect to corresponding page.
-  alert(`Going to page for: ${page}`);
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin: 15px 0;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.options-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.options-list h3 {
+  margin-bottom: 10px;
+}
+
+.options-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.options-list li {
+  margin: 10px 0;
+}
+
+.actions {
+  margin-top: 20px;
 }

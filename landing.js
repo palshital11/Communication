@@ -1,4 +1,4 @@
- // Function to handle ARQ/FEC selection and show the respective options
+// Function to handle ARQ/FEC selection and show the respective options
 document.getElementById("arqFec").addEventListener("change", toggleOptions);
 
 // Function to show the correct options based on user selection
